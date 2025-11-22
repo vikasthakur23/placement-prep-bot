@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const API = axios.create({ baseURL: 'http://localhost:5001/api' });
+const API = axios.create({ 
+  baseURL: 'https://placement-prep-bot-1-mhl3.onrender.com'
+});
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('userInfo')) {
@@ -22,4 +23,5 @@ export const fetchQuestions = (category, field) => {
   return API.get(url);
 };
 
-export const evaluateAnswer = (keywords, userAnswer) => API.post('/questions/evaluate', { keywords, userAnswer });
+export const evaluateAnswer = (keywords, userAnswer) => 
+  API.post('/questions/evaluate', { keywords, userAnswer });
