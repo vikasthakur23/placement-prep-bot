@@ -1,6 +1,6 @@
 import axios from 'axios';
 const API = axios.create({ 
-  baseURL: 'https://placement-prep-bot-1-mhl3.onrender.com'
+  baseURL:"https://placement-prep-bot-1-mhl3.onrender.com/api"
 });
 
 API.interceptors.request.use((req) => {
